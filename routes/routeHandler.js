@@ -33,11 +33,11 @@ router.get("/termofuse", function(req, res) {
 });
 
 router.get("/jokes", function(req, res) {
-	res.statusCode(200).render("jokes");
+	res.render("jokes");
 });
 
 router.get("/trendingmeme", function(req, res) {
-	res.statusCode(200).render("trendingmeme");
+	res.render("trendingmeme");
 });
 
 router.get("*", function(req, res) {
