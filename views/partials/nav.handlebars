@@ -1,4 +1,4 @@
-<div class="header_top">
+{{!-- <div class="header_top">
     <div class="container">
         <div class="pull-left logo_neno">
             <a href="/"><img src="images/company_logo.png" alt="logo" /></a>
@@ -37,4 +37,38 @@
             </ul>
         </div>
     </div>
+</div> --}}
+<div class="container">
+    <nav class="navbar navbar-expand-lg  navbar-light bg-light">
+        <a class="navbar-brand nav-pad-left" href="/"><img src="images/company_logo.png" alt="logo" /></a>
+        <div class="d-flex flex-row order-1 order-lg-1 social-icons">
+            <ul class="navbar-nav flex-row ">
+                <li class="nav-item"><a class="nav-link px-2" href="#"><span class="fab fa-facebook fa-lg"></span></a>
+                </li>
+                <li class="nav-item"><a class="nav-link px-2" href="#"><span class="fab fa-twitter fa-lg"></span></a>
+                </li>
+                <li class="nav-item"><a class="nav-link px-2" href="#"><span class="fab fa-youtube fa-lg"></span></a>
+                </li>
+                <li class="nav-item"><a class="nav-link px-2" href="#"><span class="fab fa-linkedin fa-lg"></span></a>
+                </li>
+            </ul>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse order-2 order-lg-2" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto extra-padding">
+                <li class="nav-item"><a class="nav-link" href="/trendingmeme">Trending Meme</a></li>
+                <li class="nav-item"><a class="nav-link" href="/jokes">Jokes+</a></li>
+                <li class="nav-item"><a class="nav-link" target="_blank" href="/privacypolicy">Privacy Policy</a></li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0 id=" id="searchForm">
+                <input class="form-control mr-sm-2" type="search" id="searchInput" placeholder="Search"
+                    aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" id="searchButton" type="submit">Search</button>
+            </form>
+
+        </div>
+
+    </nav>
 </div>

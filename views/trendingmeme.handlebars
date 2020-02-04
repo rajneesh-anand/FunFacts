@@ -1,0 +1,15 @@
+<section class="project_item_area">
+    <div class="container">
+        <div class="row">
+            {{#each memes}}
+            <div class="col-sm-4 project_item_inner" style="padding: 10px;">
+                <h3>{{this.title}}</h3>
+                <img src={{this.image_url}} alt="jokes meme" style="padding:10px 0px" class="img-responsive card_image">
+                <p>{{this.description}}</p>
+
+            </div>
+            {{/each}}
+            {{!-- <div class="col-4">col-4</div> --}}
+        </div>
+    </div>
+</section>

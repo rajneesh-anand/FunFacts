@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const { memeDetails } = require("../controllers/meme");
+const { getMemes } = require("../controllers/meme");
+const { getTrendingMemes } = require("../controllers/trendingmeme");
 const axios = require("axios");
 
 // router.get("/", (req, res, next) => {
@@ -32,17 +33,16 @@ router.get("/termofuse", function(req, res) {
 	res.sendFile("termsofuse.html", { root: "./public/static" });
 });
 
-router.get("/jokes", function(req, res) {
-	res.render("jokes");
-});
+// router.get("/jokes", function(req, res) {
+// 	res.render("jokes");
+// });
+router.get("/jokes", getMemes);
 
 router.get("/", function(req, res) {
 	res.render("home");
 });
 
-router.get("/trendingmeme", function(req, res) {
-	res.render("trendingmeme");
-});
+router.get("/trendingmeme", getTrendingMemes);
 
 router.get("*", function(req, res) {
 	res.render("error", { title: `${process.env.websiteUrl} - Fun Facts` });

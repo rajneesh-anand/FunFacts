@@ -12,6 +12,10 @@ const app = express();
 var hbs = exphbs.create({
 	helpers: {
 		hello: function() {
+			let count = Math.floor(Math.random() * Math.floor(15));
+			return `humor${count}.jpg`;
+		},
+		headimage: function() {
 			return Math.floor(Math.random() * Math.floor(10));
 		},
 		domain_url: process.env.BASE_URL,
