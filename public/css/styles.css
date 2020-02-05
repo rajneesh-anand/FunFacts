@@ -15,7 +15,6 @@ body {
 .bg-light {
 	background-color: #dce4ec !important;
 }
-
-.footer-sitemap {
-	color: red;
+.navbar {
+	padding: 5px 5px !important;
 }
