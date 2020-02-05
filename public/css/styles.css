@@ -1,16 +1,21 @@
-body {
-	background-color: #32cd32 !important;
-}
-
-.extra-padding {
-	padding-right: 1rem;
-}
-.social-icons {
-	/* padding-left: 5rem; */
-}
 #results {
 	padding-top: 15px;
 }
 .nav-pad-left {
 	/* padding-left: 2rem; */
+}
+
+.navbar-light .navbar-nav .nav-link {
+	color: #495057 !important;
+}
+
+body {
+	background-color: #dce4ec !important;
+}
+.bg-light {
+	background-color: #dce4ec !important;
+}
+
+.footer-sitemap {
+	color: red;
 }
