@@ -39,9 +39,15 @@ router.get("/termofuse", function(req, res) {
 // router.get("/jokes", function(req, res) {
 // 	res.render("jokes");
 // });
-router.get("/jokes", getMemes);
+router.get("/jokes", getMemes, {
+	pageTitle: "Jokes Humor News Fun",
+	Desc: "Trending News Jokes and Funny Blogs"
+});
 
-router.get("/", getRandomFacts);
+router.get("/", getRandomFacts, {
+	pageTitle: "Breaking News Blogs ",
+	Desc: "Trending News Jokes meme and funny Blogs"
+});
 
 router.get("/contact", function(req, res) {
 	res.render("contactus");
@@ -64,7 +70,10 @@ router.post("/contact", (req, res) => {
 	});
 });
 
-router.get("/trendingmeme", getTrendingMemes);
+router.get("/trendingmeme", getTrendingMemes, {
+	pageTitle: "Trending TikTok News Blogs ",
+	Desc: "Trending News Jokes meme and funny Blogs"
+});
 
 router.get("*", function(req, res) {
 	res.render("error", { title: `${process.env.websiteUrl} - Fun Facts` });
