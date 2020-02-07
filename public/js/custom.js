@@ -1,4 +1,3 @@
-import reddit from "./apicalls.js";
 const searchForm = document.getElementById("searchForm");
 const textSearch = document.getElementById("searchInput");
 const searchButton = document.getElementById("searchbutton");
@@ -11,7 +10,7 @@ searchForm.addEventListener("submit", e => {
 	}
 	console.log(searchTerm);
 
-	reddit.search(searchTerm, "10", "hot").then(results => {
+	getDataFromApi.search(searchTerm, "10", "hot").then(results => {
 		let output = '<div class="card-columns">';
 		console.log(results);
 		results.forEach(post => {
@@ -47,42 +46,15 @@ function truncateString(myString, limit) {
 	return myString.substring(0, shortened);
 }
 
-// const getDataFromApi = (inputSearch, sortBy, searchLimit) => {
-// 	let requestUrl = `http://www.reddit.com/search.json?q=${inputSearch}&sort=${sortBy}&limit=${searchLimit}`;
-// 	console.log(requestUrl);
-
-// 	fetch(requestUrl)
-// 		.then(response => {
-// 			return response.json();
-// 		})
-// 		.then(data => {
-// 			data.data.children
-// 				.map(data => {
-// 					return data.data;
-// 				})
-
-// 				.then(results => {
-// 					let output = '<div class="card-columns">';
-// 					results.array.forEach(element => {});
-// 					records => {
-// 						output += `
-
-// 					<div class="card" >
-// 					<img src="..." class="card-img-top" alt="...">
-// 					<div class="card-body">
-// 					  <h5 class="card-title">Card title</h5>
-// 					  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-// 					  <a href="#" class="btn btn-primary">Go somewhere</a>
-// 					</div>
-// 				  </div>
-
-// 					`;
-// 					};
-// 					output += "</div>";
-// 					document.getElementById("results").innerHTML = output;
-// 				});
-// 		})
-// 		//console.log(data.data.children);
-
-// 		.catch(err => console.log(err));
-// };
+const getDataFromApi = {
+	search: function(searchTerm, searchLimit, sortBy) {
+		return fetch(
+			`https://www.reddit.com/search.json?q=${searchTerm}&sort=${sortBy}&limit=${searchLimit}`
+		)
+			.then(res => res.json())
+			.then(data => {
+				return data.data.children.map(data => data.data);
+			})
+			.catch(err => console.log(err));
+	}
+};

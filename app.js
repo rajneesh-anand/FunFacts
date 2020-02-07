@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 
 var hbs = exphbs.create({
+	defaultLayout: "main",
 	helpers: {
 		hello: function() {
 			let count = Math.floor(Math.random() * Math.floor(15));
@@ -29,7 +30,7 @@ var hbs = exphbs.create({
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
-//app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Set the static folder
 app.use(express.static(path.join(__dirname, "public")));
