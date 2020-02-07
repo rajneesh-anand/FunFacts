@@ -12,7 +12,7 @@ let myInit = {
 };
 
 const fetchJokes = new Request(
-	`${process.env.BASE_URL}/data/jokes.json`,
+	`${process.env.BASE_URL}/data/home.json`,
 	myInit
 );
 
