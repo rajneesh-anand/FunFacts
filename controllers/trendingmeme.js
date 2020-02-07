@@ -29,7 +29,11 @@ exports.getTrendingMemes = (req, res) => {
 				memeArray.push(posts);
 			});
 			console.log(memeArray);
-			res.render("trendingmeme", { memes: memeArray });
+			res.render("trendingmeme", {
+				memes: memeArray,
+				pageTitle: "Trending TikTok News Blogs ",
+				Desc: "Trending News Jokes meme and funny Blogs"
+			});
 		})
 		.catch(err => {
 			console.log(err);

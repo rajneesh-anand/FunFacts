@@ -28,10 +28,13 @@ exports.getMemes = (req, res) => {
 			json.map(posts => {
 				memeArray.push(posts);
 			});
-			let randomItem = array[(Math.random() * array.length) | 0];
 
 			console.log(memeArray);
-			res.render("jokes", { memes: memeArray });
+			res.render("jokes", {
+				memes: memeArray,
+				pageTitle: "Jokes Humor News Fun",
+				Desc: "Trending News Jokes and Funny Blogs"
+			});
 		})
 		.catch(err => {
 			console.log(err);

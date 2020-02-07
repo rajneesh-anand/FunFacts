@@ -32,7 +32,11 @@ exports.getRandomFacts = (req, res) => {
 			let randomfacts = memeArray[Math.floor(Math.random() * memeArray.length)];
 
 			console.log(randomfacts);
-			res.render("home", { facts: randomfacts });
+			res.render("home", {
+				facts: randomfacts,
+				pageTitle: "Breaking News Blogs ",
+				Desc: "Trending News Jokes meme and funny Blogs"
+			});
 		})
 		.catch(err => {
 			console.log(err);
