@@ -22,7 +22,10 @@ var hbs = exphbs.create({
 		domain_url: process.env.BASE_URL,
 		desc: "funny memes tredning tiktok videos",
 		title: "funny memes trending tiktok",
-		fb_id: process.env.FB_ID
+		fb_id: process.env.FB_ID,
+		isEqual: function(arg1, arg2, options) {
+			return arg1 == arg2 ? options.fn(this) : options.inverse(this);
+		}
 	}
 });
 

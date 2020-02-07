@@ -4,8 +4,23 @@
         <!-- Form -->
 
         <div class="text-center textdecorate">
-            <h3>Dobre Rano ZLATKO </h3> {{message}}
-            <h3>Please convey my Ahoj to Eva </h3>
+
+            {{#isEqual message 'Email Sent'}}
+            <h4>Thank you for contacting us</h4>
+            <h3>We will contact you shortly !</h3>
+            <h3>Best Wishes !</h3>
+
+            {{else}}
+
+            <h4>Sorry ! We didn't receive your mail</h4>
+            <h3>Please check internet connection</h3>
+            <h3>Best Wishes !</h3>
+
+            {{/isEqual}}
+
+
+            {{!-- <h3>{{message}}</h3> --}}
+
         </div>
     </div>
 </div>

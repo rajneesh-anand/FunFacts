@@ -61,7 +61,7 @@ router.post("/contact", (req, res) => {
 				.render("confirm", { message: `${err.message} : Email not sent !` });
 		}
 		console.log("Email Sent Successfully");
-		res.render("confirm", { message: "Thank you for testing !" });
+		res.render("confirm", { message: "Email Sent" });
 	});
 });
 
