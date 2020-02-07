@@ -10,7 +10,7 @@ searchForm.addEventListener("submit", e => {
 	}
 	console.log(searchTerm);
 
-	getDataFromApi.search(searchTerm, "10", "hot").then(results => {
+	getDataFromApi.search(searchTerm, "30", "hot").then(results => {
 		let output = '<div class="card-columns">';
 		console.log(results);
 		results.forEach(post => {

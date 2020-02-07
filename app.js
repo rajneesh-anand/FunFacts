@@ -20,7 +20,7 @@ var hbs = exphbs.create({
 			return Math.floor(Math.random() * Math.floor(10));
 		},
 		domain_url: process.env.BASE_URL,
-		desc: "funny memes tredning tiktok videos",
+		desc: "funny memes trending tiktok videos blogs and news",
 		title: "funny memes trending tiktok",
 		fb_id: process.env.FB_ID,
 		isEqual: function(arg1, arg2, options) {

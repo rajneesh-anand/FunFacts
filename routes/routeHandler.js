@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const { getRandomFacts } = require("../controllers/home");
 const { getMemes } = require("../controllers/meme");
 const { getTrendingMemes } = require("../controllers/trendingmeme");
 const sendMail = require("../controllers/mailer");
@@ -40,9 +41,7 @@ router.get("/termofuse", function(req, res) {
 // });
 router.get("/jokes", getMemes);
 
-router.get("/", function(req, res) {
-	res.render("home");
-});
+router.get("/", getRandomFacts);
 
 router.get("/contact", function(req, res) {
 	res.render("contactus");

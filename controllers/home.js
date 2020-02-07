@@ -16,7 +16,7 @@ const fetchJokes = new Request(
 	myInit
 );
 
-exports.getMemes = (req, res) => {
+exports.getRandomFacts = (req, res) => {
 	fetch(fetchJokes)
 		.then(response => {
 			return response.json();
@@ -28,10 +28,11 @@ exports.getMemes = (req, res) => {
 			json.map(posts => {
 				memeArray.push(posts);
 			});
-			let randomItem = array[(Math.random() * array.length) | 0];
+			console.log(JSON.stringify(memeArray));
+			let randomfacts = memeArray[Math.floor(Math.random() * memeArray.length)];
 
-			console.log(memeArray);
-			res.render("jokes", { memes: memeArray });
+			console.log(randomfacts);
+			res.render("home", { facts: randomfacts });
 		})
 		.catch(err => {
 			console.log(err);

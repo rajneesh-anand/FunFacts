@@ -117,7 +117,7 @@ body {
 .textdecorate {
 	font-size: 3rem;
 	font-weight: 400;
-	color: red;
+	color: rgb(150, 59, 59);
 	font-family: cursive;
 	padding-top: 50px;
 }
