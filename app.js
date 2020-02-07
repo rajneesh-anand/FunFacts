@@ -20,8 +20,8 @@ var hbs = exphbs.create({
 			return Math.floor(Math.random() * Math.floor(10));
 		},
 		domain_url: process.env.BASE_URL,
-		fbDesc: "Liked it? Click Here for fun facts and horoscope.",
-		title: "Best things for you in 2020 ?",
+		fbDesc: "Liked it? Click Here to know moore fun facts and horoscope.",
+		title: " The best thing will happen with you in 2020 ?",
 		fb_id: process.env.FB_ID,
 		isEqual: function(arg1, arg2, options) {
 			return arg1 == arg2 ? options.fn(this) : options.inverse(this);
