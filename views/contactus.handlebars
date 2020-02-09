@@ -1,35 +1,69 @@
-{{!-- <div class="container h-100"> --}}
-<div class="row h-100 justify-content-center align-items-center">
-  <div class="col-10 col-md-8 col-lg-6">
-    <!-- Form -->
-    <form class="form-example contactForm" role="form" action="" method="post">
-      <h3 class="text-center"
-        style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color:rgb(34, 65, 105)">
-        CONTACT ||
-        SUPPORT</h3>
+{{!-- <div class="container" style="margin-top:90px;"> --}}
+<div class="card-panel z-depth-5">
+  <div class="row">
+    <div class="col s12 m6">
 
-      <!-- Input fields -->
-      <div class="form-group">
-        <label for="username"> Name </label>
-        <input type="text" class="form-control username" id="username" placeholder="Enter your Name..." name="username">
-      </div>
-      <div class="form-group">
-        <label for="email">Email </label>
-        <input type="email" class="form-control email" id="email" placeholder="Email..." name="email" required>
-      </div>
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea class="form-control" id="inputMessage" placeholder="How can we help you ? " name="message" rows="3"
-          required></textarea>
+
+
+      <h5 class="center">How can we help you ?</h5>
+      <div class="row">
+        <form class="col s12 m12" role="form" method="post">
+          <div class="row">
+            <div class="input-field col s12 m12">
+              <i class="material-icons prefix">account_box</i>
+              <input id="icon_prefix" type="text" class="validate" name="username">
+              <label for="icon_prefix">Username</label>
+            </div>
+
+            <div class="input-field col s12 m12">
+              <i class="material-icons prefix">local_post_office</i>
+              <input id="icon_email" type="email" class="validate" name="email">
+              <label for="icon_email">Your Email</label>
+            </div>
+
+            <div class="input-field col s12 m12">
+              <i class="material-icons prefix">mode_edit</i>
+              <textarea id="icon_prefix2" class="materialize-textarea" name="message"></textarea>
+              <label for="icon_prefix2">Message</label>
+            </div>
+
+
+          </div>
+          <button class="btn waves-effect waves-light center" type="submit" name="action">Send your message</button>
+          <!--row-->
+        </form>
 
       </div>
+      <!--row-->
 
-      <div class="text-center">
-        <button type="submit" class="btn btn-primary btn-customized">Send Message</button>
-      </div>
-      <!-- End input fields -->
 
-    </form>
-    <!-- Form end -->
+
+
+
+    </div>
+    <!--col-->
+
+
+
+
+
+    <div class="col s12 m5 offset-m1">
+      <br>
+      <br>
+      <p>
+        123 IMAGINARY ST, SUITE 100 <br>
+        XXXXX, IL 30314
+      </p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25895663.485556163!2d-95.665!3d37.599999999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2sus!4v1428092793529"
+        width="300" height="300" frameborder="0" style="border:0"></iframe>
+    </div>
+
+
+
   </div>
+  <!--row-->
 </div>
+<!--card-->
+{{!-- </div> --}}
+<!--conatiner-->

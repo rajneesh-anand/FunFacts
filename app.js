@@ -25,6 +25,17 @@ var hbs = exphbs.create({
 		fb_id: process.env.FB_ID,
 		isEqual: function(arg1, arg2, options) {
 			return arg1 == arg2 ? options.fn(this) : options.inverse(this);
+		},
+
+		image: function(arg1) {
+			return arg1
+				? arg1.images[0].source.url
+				: "https://cdn.comparitech.com/wp-content/uploads/2017/08/reddit-1.jpg";
+		},
+		truncateString: function(myString, limit) {
+			const shortened = myString.indexOf(" ", limit);
+			if (shortened == -1) return myString;
+			return myString.substring(0, shortened);
 		}
 	}
 });

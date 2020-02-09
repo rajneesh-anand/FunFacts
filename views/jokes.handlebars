@@ -1,20 +1,20 @@
-<div class="row">
-    {{#each memes}}
-    <div class="col-sm-4">
-
-        <div class="card-group">
-
+<div class="section">
+    <div class="row">
+        {{#each memes}}
+        <div class="col s12 m4">
             <div class="card">
-                <img class="card-img-top" src={{this.image_url}} alt=" jokes meme">
-                <div class="card-body">
-                    <h5 class="card-title">{{this.title}}</h5>
-                    <p class="card-text">{{this.description}}</p>
+                <div class="card-image">
+                    <img src="{{this.image_url}}">
+                    <span class="card-title">{{this.title}}</span>
                 </div>
-                <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
+                <div class="card-content">
+                    <p>{{this.description}}</p>
+                </div>
+                <div class="card-action">
+                    <a href="/">This is a link</a>
                 </div>
             </div>
         </div>
+        {{/each}}
     </div>
-    {{/each}}
 </div>

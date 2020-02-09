@@ -8,10 +8,15 @@ html {
 }
 
 body {
-	background-color: #dce4ec !important;
-
-	padding-bottom: 180px;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 }
+
+main {
+	flex: 1 0 auto;
+}
+
 .nav-custom {
 	background-color: whitesmoke !important;
 	color: royalblue;
@@ -125,4 +130,15 @@ body {
 }
 #results {
 	padding-top: 10px;
+}
+.footer-ul-media {
+	font-size: 18px;
+	font-family: "Courier New", Courier, monospace;
+}
+
+.icon-block {
+	padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
 }

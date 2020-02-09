@@ -1,40 +1,35 @@
-const Request = require("request");
-require("dotenv").config();
-const fetch = require("node-fetch");
+const axios = require("axios");
 
-let myInit = {
+let searchTerm = "unexpected";
+let sortBy = "hot";
+let searchLimit = "10";
+
+const options = {
+	url: `https://www.reddit.com/search.json?q=${searchTerm}&sort=${sortBy}&limit=${searchLimit}`,
 	method: "GET",
 	headers: {
+		Accept: "application/json",
 		"Content-Type": "application/json"
-	},
-	mode: "cors",
-	cache: "default"
+	}
 };
 
-const fetchMeme = new Request(
-	`${process.env.BASE_URL}/data/trendingjokes.json`,
-	myInit
-);
-
-exports.getTrendingMemes = (req, res) => {
-	fetch(fetchMeme)
+exports.getTrendingMemes = (req, res, next) => {
+	axios(options)
 		.then(response => {
-			return response.json();
-		})
-		.then(json => {
+			//	console.log(response);
 			let memeArray = [];
-			console.log(json);
-
-			json.map(posts => {
-				memeArray.push(posts);
+			response.data.data.children.map(posts => {
+				memeArray.push(posts.data);
 			});
-			console.log(memeArray);
+
+			//console.log(memeArray);
 			res.render("trendingmeme", {
 				memes: memeArray,
 				pageTitle: "Trending TikTok News Blogs ",
 				Desc: "Trending News Jokes meme and funny Blogs"
 			});
 		})
+
 		.catch(err => {
 			console.log(err);
 		});
