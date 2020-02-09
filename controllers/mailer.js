@@ -14,7 +14,7 @@ const sendMail = (username, email, message, cb) => {
 	const mailOptions = {
 		from: email,
 		to: "rajneesh.k.anand@hotmail.com",
-		subject: "YOU HAVE RECEIVED A MAIL FROM YOUR SOULMATE" + " - " + username,
+		subject: "thefunfactsclub " + " - " + username,
 		text: message
 	};
 
