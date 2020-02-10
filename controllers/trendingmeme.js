@@ -1,8 +1,8 @@
 const axios = require("axios");
 
-let searchTerm = "unexpected";
+let searchTerm = "trending meme";
 let sortBy = "hot";
-let searchLimit = "10";
+let searchLimit = "25";
 
 const options = {
 	url: `https://www.reddit.com/search.json?q=${searchTerm}&sort=${sortBy}&limit=${searchLimit}`,
@@ -16,7 +16,6 @@ const options = {
 exports.getTrendingMemes = (req, res, next) => {
 	axios(options)
 		.then(response => {
-			//	console.log(response);
 			let memeArray = [];
 			response.data.data.children.map(posts => {
 				memeArray.push(posts.data);

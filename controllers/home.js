@@ -1,6 +1,7 @@
 const Request = require("request");
 require("dotenv").config();
 const fetch = require("node-fetch");
+const axios = require("axios");
 
 let myInit = {
 	method: "GET",
@@ -23,12 +24,11 @@ exports.getRandomFacts = (req, res) => {
 		})
 		.then(json => {
 			let memeArray = [];
-			console.log(json);
 
 			json.map(posts => {
 				memeArray.push(posts);
 			});
-			console.log(JSON.stringify(memeArray));
+
 			let randomfacts = memeArray[Math.floor(Math.random() * memeArray.length)];
 
 			console.log(randomfacts);
@@ -38,6 +38,37 @@ exports.getRandomFacts = (req, res) => {
 				Desc: "Trending News Jokes meme and funny Blogs"
 			});
 		})
+		.catch(err => {
+			console.log(err);
+		});
+};
+
+const options = {
+	url: `${process.env.BASE_URL}/data/home.json`,
+	method: "GET",
+	headers: {
+		Accept: "application/json",
+		"Content-Type": "application/json"
+	}
+};
+
+exports.getAllFacts = (req, res, next) => {
+	axios(options)
+		.then(response => {
+			//console.log(response);
+			let memeArray = [];
+			response.data.map(posts => {
+				memeArray.push(posts);
+			});
+
+			//console.log(memeArray);
+			res.render("home", {
+				facts: memeArray,
+				pageTitle: "Trending News TikTok Sports Blogs ",
+				Desc: "Breaking News Jokes Meme and funny Blogs"
+			});
+		})
+
 		.catch(err => {
 			console.log(err);
 		});

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getRandomFacts } = require("../controllers/home");
+const { getRandomFacts, getAllFacts } = require("../controllers/home");
 const { getMemes } = require("../controllers/meme");
 const { getTrendingMemes } = require("../controllers/trendingmeme");
 const sendMail = require("../controllers/mailer");
